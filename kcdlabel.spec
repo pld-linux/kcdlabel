@@ -42,6 +42,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
+# standardize paths ("medium" is 59x48 not 64x64 in fact...)
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}/locolor
+mv -f $RPM_BUILD_ROOT%{_pixmapsdir}/small/locolor $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16
+mv -f $RPM_BUILD_ROOT%{_pixmapsdir}/medium/locolor $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/64x64
+
 %find_lang %{name}
 
 %clean

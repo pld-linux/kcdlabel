@@ -26,7 +26,6 @@ ksi±¿eczek do p³yt CD.
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
 # I'm not sure about this Category Utility
 
@@ -44,13 +43,15 @@ sed -e 's#slots\[CDROM_MAX_SLOTS\]#kde_slots\[CDROM_MAX_SLOTS\]#g' \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # standardize paths ("medium" is 59x48 not 64x64 in fact...)
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}/locolor
-mv -f $RPM_BUILD_ROOT%{_pixmapsdir}/small/locolor $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16
-mv -f $RPM_BUILD_ROOT%{_pixmapsdir}/medium/locolor $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/64x64
-mv -f $RPM_BUILD_ROOT%{_desktopdir}/Multimedia/* $RPM_BUILD_ROOT%{_desktopdir}/
+# XXX: check paths/kill unsupported icons
+install -d $RPM_BUILD_ROOT%{_iconsdir}/locolor
+mv -f $RPM_BUILD_ROOT%{_iconsdir}/small/locolor $RPM_BUILD_ROOT%{_iconsdir}/locolor/16x16
+mv -f $RPM_BUILD_ROOT%{_iconsdir}/medium/locolor $RPM_BUILD_ROOT%{_iconsdir}/locolor/64x64
+mv -f $RPM_BUILD_ROOT%{_desktopdir}/Multimedia/* $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
 
@@ -62,4 +63,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog AUTHORS
 %attr(755,root,root) %{_bindir}/%{name}
 %{_desktopdir}/kcdlabel.desktop
-%{_pixmapsdir}/*/*/apps/*
+%{_iconsdir}/*/*/apps/*

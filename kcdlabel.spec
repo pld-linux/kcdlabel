@@ -1,5 +1,5 @@
 Summary:	KCDLabel - create covers, labels and booklets
-Summary(pl):	KCDLabel - tworzenie ok≥adek, etykiet i ksi±øeczek
+Summary(pl.UTF-8):   KCDLabel - tworzenie ok≈Çadek, etykiet i ksiƒÖ≈ºeczek
 Name:		kcdlabel
 Version:	2.13
 Release:	1
@@ -16,9 +16,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KCDLabel is a KDE program used to create covers, labels and booklets
 for your CD cases.
 
-%description -l pl
-KCDLabel to program dla KDE s≥uø±cy do tworzenia ok≥adek, etykiet i
-ksi±øeczek do p≥yt CD.
+%description -l pl.UTF-8
+KCDLabel to program dla KDE s≈Çu≈ºƒÖcy do tworzenia ok≈Çadek, etykiet i
+ksiƒÖ≈ºeczek do p≈Çyt CD.
 
 %prep
 %setup -q -n %{name}-%{version}-KDE3

@@ -1,5 +1,5 @@
 Summary:	KCDLabel - create covers, labels and booklets
-Summary(pl.UTF-8):   KCDLabel - tworzenie okładek, etykiet i książeczek
+Summary(pl.UTF-8):	KCDLabel - tworzenie okładek, etykiet i książeczek
 Name:		kcdlabel
 Version:	2.13
 Release:	1

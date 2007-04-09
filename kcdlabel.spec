@@ -9,7 +9,7 @@ Source0:	http://kcdlabel.sourceforge.net/download/%{name}-%{version}-KDE3.tar.gz
 # Source0-md5:	a384147c5bdbe08f64356fe31eb12249
 URL:		http://kcdlabel.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
-BuildRequires:	qt-devel >= 3.1
+BuildRequires:	qt-devel >= 6:3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
